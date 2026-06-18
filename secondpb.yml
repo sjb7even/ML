@@ -1,0 +1,14 @@
+---
+- name: Ansible with one module
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Welcome friends
+      firstmodule:
+        name: "Ansible"
+      register: result
+
+    - name: Show message
+      debug:
+        msg: "{{ result.message }}"
